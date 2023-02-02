@@ -6,7 +6,8 @@ const fs = require("fs");
 
 router.get('/:img', async (req, res) => {
     const { img } = req.params;
-    res.sendFile(process.cwd() + '/imagenes/' + img);
+    console.log(res);
+    res.send(process.cwd() + '/imagenes/' + img);
 });
 
 router.post('/', (req, res) => {
