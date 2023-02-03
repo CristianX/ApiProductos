@@ -7,10 +7,11 @@ const fs = require("fs");
 router.get('/:img', async (req, res) => {
     const { img } = req.params;
     console.log(res);
-    res.send(process.cwd() + '/imagenes/' + img);
+    res.sendFile(process.cwd() + '/imagenes/' + img);
 });
 
 router.post('/', (req, res) => {
+    console.log('Path de imagen', req.body)
     try {
         upload(req, res, (err) => {
             if (err) {
